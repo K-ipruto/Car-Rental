@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Confirmation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <header>
+        <h1>QuickCar Rentals</h1>
+    </header>
+    <main>
+        <section class="confirmation">
+            <h2>Reservation Confirmed!</h2>
+            <p>You have successfully reserved a <strong>{{ car_type }}</strong>.</p>
+            <p>Pick-up Date: <strong>{{ pickup_date }}</strong></p>
+            <p>Drop-off Date: <strong>{{ dropoff_date }}</strong></p>
+            <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+        </section>
+    </main>
+</body>
+</html>
