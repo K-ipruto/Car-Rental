@@ -1,0 +1,75 @@
+{
+    "cars": [
+      {
+        "id": 1,
+        "make": "Toyota",
+        "model": "Corolla",
+        "year": 2020,
+        "availability": true
+      },
+      {
+        "id": 2,
+        "make": "Honda",
+        "model": "Civic",
+        "year": 2019,
+        "availability": true
+      },
+      {
+        "id": 3,
+        "make": "Ford",
+        "model": "Focus",
+        "year": 2021,
+        "availability": false
+      },
+      {
+        "id": 4,
+        "make": "Chevrolet",
+        "model": "Malibu",
+        "year": 2018,
+        "availability": true
+      },
+      {
+        "id": 5,
+        "make": "Tesla",
+        "model": "Model 3",
+        "year": 2022,
+        "availability": false
+      },
+      {
+        "id": 6,
+        "make": "BMW",
+        "model": "3 Series",
+        "year": 2021,
+        "availability": true
+      },
+      {
+        "id": 7,
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "year": 2020,
+        "availability": false
+      },
+      {
+        "id": 8,
+        "make": "Hyundai",
+        "model": "Elantra",
+        "year": 2019,
+        "availability": true
+      },
+      {
+        "id": 9,
+        "make": "Nissan",
+        "model": "Altima",
+        "year": 2021,
+        "availability": true
+      },
+      {
+        "id": 10,
+        "make": "Volkswagen",
+        "model": "Passat",
+        "year": 2017,
+        "availability": false
+      }
+    ]
+  }
+  

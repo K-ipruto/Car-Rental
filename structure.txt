@@ -1,0 +1,24 @@
+car-rental-service/
+├── config/
+│   └── db.js
+├── controllers/
+│   ├── authController.js
+│   ├── carController.js
+│   └── bookingController.js
+├── models/
+│   ├── User.js
+│   ├── Car.js
+│   └── Booking.js
+├── routes/
+│   ├── authRoutes.js
+│   ├── carRoutes.js
+│   └── bookingRoutes.js
+├── middleware/
+│   └── authMiddleware.js
+├── utils/
+│   └── errorHandler.js
+├── .env
+├── .gitignore
+├── package.json
+├── server.js
+└── README.md
