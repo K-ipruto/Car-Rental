@@ -5,17 +5,23 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 
 class Config:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'your_secret_key')
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///site.db')
+    SQLALCHEMY_DATABASE_URI = "sqlite:///quickcar.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 jwt = JWTManager()
 
+from app.user import User
+from app.car import Car
+from app.booking import Booking
+
 def create_app():
     app = Flask(__name__)
     app.config.from_object('app.config.Config')
+
+    with app.app_context():
+        db.create_all()  # Create tables
 
     db.init_app(app)
     bcrypt.init_app(app)
