@@ -13,10 +13,9 @@
             <h1>QuickCar Rentals</h1>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#cars">Cars</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/cars">Cars</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,19 +36,19 @@
             <h2>Available Cars</h2>
             <div class="car-list">
                 <div class="car">
-                    <img src="car1.jpg" alt="Sedan">
+                    <img src="images/car_4.png" alt="Sedan">
                     <h3>Sedan</h3>
                     <p>Comfortable and efficient for city drives.</p>
                     <button class="btn">Rent Now</button>
                 </div>
                 <div class="car">
-                    <img src="car2.jpg" alt="SUV">
+                    <img src="images/car_5.png" alt="SUV">
                     <h3>SUV</h3>
                     <p>Spacious and reliable for long trips.</p>
                     <button class="btn">Rent Now</button>
                 </div>
                 <div class="car">
-                    <img src="car3.jpg" alt="Convertible">
+                    <img src="images/car_10.png" alt="Convertible">
                     <h3>Convertible</h3>
                     <p>Perfect for a scenic coastal drive.</p>
                     <button class="btn">Rent Now</button>
@@ -57,6 +56,46 @@
             </div>
         </div>
     </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-list">
+                    <div class="service">
+                        <h3>Car Rentals</h3>
+                        <p>We offer a wide range of cars for rent, from compact cars to luxury vehicles.</p>
+                        <h3>Maintenance</h3>
+                        <p>Our maintenance service ensures that all our cars are in top condition.</p>
+                        <h3>24/7 Support</h3>
+                        <p>We provide 24/7 customer support to assist you with any issues or inquiries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    
 
     <!-- Footer Section -->
     <footer>

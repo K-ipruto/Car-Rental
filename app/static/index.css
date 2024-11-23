@@ -52,7 +52,7 @@ header nav ul li a:hover {
 
 /* Hero Section */
 #hero {
-    background: url('hero.jpg') no-repeat center center/cover;
+    background: url('images/car_10.png') no-repeat center center/cover;
     color: #fff;
     height: 60vh;
     display: flex;
@@ -63,17 +63,18 @@ header nav ul li a:hover {
 
 #hero .hero-text h2 {
     font-size: 36px;
-    color: #333;
+    color: #f9f9f9;
 }
 
 #hero .hero-text p {
-    color: #333;
+    color: #f9f9f9;
     font-size: 18px;
     margin-top: 1px;
+    margin-bottom: 30px;
 }
 
 #hero .btn {
-    margin-top: 20px;
+    margin-top: 50px; /* Increased from 30px to 50px */
     padding: 10px 20px;
     background-color: #ff6f61;
     color: #fff;
@@ -91,6 +92,13 @@ header nav ul li a:hover {
     background-color: #f9f9f9;
 }
 
+h2 {
+    /* padding-top: 5px; */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
 #cars h2 {
     text-align: center;
     margin-bottom: 30px;
@@ -99,18 +107,19 @@ header nav ul li a:hover {
 
 .car-list {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
 }
 
 .car {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width:25%;
     padding: 20px;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px 0px 30px 30px;
 }
 
 .car img {
@@ -138,6 +147,101 @@ header nav ul li a:hover {
 }
 
 .car .btn:hover {
+    background-color: #ff4a3b;
+}
+
+/* Services Section */
+#services {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+#services h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.service h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff6f61;
+    outline: none;
+}
+
+button.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn:hover {
     background-color: #ff4a3b;
 }
 

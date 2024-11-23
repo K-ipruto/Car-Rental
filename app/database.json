@@ -7,7 +7,7 @@
       "year": 2020,
       "availability": true,
       "description": "A reliable sedan with excellent fuel efficiency and advanced safety features.",
-      "image": "https://example.com/images/toyota-corolla-2020.jpg"
+      "image": "/car_1.png"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "year": 2019,
       "availability": true,
       "description": "A compact car known for its smooth ride and modern technology.",
-      "image": "https://example.com/images/honda-civic-2019.jpg"
+      "image": "/car_2.png"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "year": 2021,
       "availability": false,
       "description": "A sporty hatchback with great handling and a sleek design.",
-      "image": "https://example.com/images/ford-focus-2021.jpg"
+      "image": "/car_3.png"
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "year": 2018,
       "availability": true,
       "description": "A midsize sedan offering a comfortable interior and efficient performance.",
-      "image": "https://example.com/images/chevrolet-malibu-2018.jpg"
+      "image": "/car_4.png"
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "year": 2022,
       "availability": false,
       "description": "A fully electric sedan with cutting-edge technology and impressive range.",
-      "image": "https://example.com/images/tesla-model3-2022.jpg"
+      "image": "/car_5.png"
     },
     {
       "id": 6,
@@ -52,7 +52,7 @@
       "year": 2021,
       "availability": true,
       "description": "A luxury sedan offering a powerful engine and premium features.",
-      "image": "https://example.com/images/bmw-3series-2021.jpg"
+      "image": "/car_6.png"
     },
     {
       "id": 7,
@@ -61,7 +61,7 @@
       "year": 2020,
       "availability": false,
       "description": "A high-end sedan with sophisticated design and superior comfort.",
-      "image": "https://example.com/images/mercedes-cclass-2020.jpg"
+      "image": "/car_7.png"
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "year": 2019,
       "availability": true,
       "description": "A budget-friendly car with a stylish exterior and modern amenities.",
-      "image": "https://example.com/images/hyundai-elantra-2019.jpg"
+      "image": "/car_8.png"
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "year": 2021,
       "availability": true,
       "description": "A reliable midsize sedan with excellent safety ratings and a smooth ride.",
-      "image": "https://example.com/images/nissan-altima-2021.jpg"
+      "image": "/car_9.png"
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "year": 2017,
       "availability": false,
       "description": "A spacious sedan with a refined interior and strong performance.",
-      "image": "https://example.com/images/volkswagen-passat-2017.jpg"
+      "image": "/car_10.png"
     }
   ]
 }
