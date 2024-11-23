@@ -33,6 +33,34 @@
         </div>
     </section>
 
+        <!-- Rental Form Modal -->
+        <div class="modal-overlay"> </div>
+        <div id="rental-form">
+            <button class="close-button">&times;</button>
+            <form id="booking-form">
+                <label for="car">Select Car:</label>
+                <select id="car" name="car" required>
+                    <option value="">Choose a car</option>
+                    <option value="car1">Car 1</option>
+                    <option value="car2">Car 2</option>
+                    <!-- More options -->
+                </select>
+    
+                <label for="rental-date">Rental Date and Time:</label>
+                <input type="datetime-local" id="rental-date" name="rental-date" required>
+    
+                <label for="duration">Duration (days):</label>
+                <input type="number" id="duration" name="duration" min="1" required>
+    
+                <label for="driver">Need Driver:</label>
+                <input type="checkbox" id="driver" name="driver">
+    
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    
+        <script src="app.js"></script>
+
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 QuickCar Rentals. All rights reserved.</p>
