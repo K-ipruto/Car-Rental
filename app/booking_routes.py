@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from models.booking import Booking
-from models.car import Car
+from booking import Booking
+from car import Car
 from .. import db
 
 booking_bp = Blueprint('booking', __name__, url_prefix='/bookings')

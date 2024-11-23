@@ -31,11 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function showRentalForm(car) {
+    const rentalForm = document.getElementById('rental-form');
     document.querySelector('.modal-overlay').style.display = 'block';
     document.getElementById('rental-form').style.display = 'block';
-    const rentalForm = document.getElementById('rental-form');
     rentalForm.style.display = 'block';
     document.getElementById('car').value = car.model;
+
+    // Reset form fields
+    document.getElementById('booking-form').reset();
 
     // Display car details in form
     const carDetails = document.createElement('div');
