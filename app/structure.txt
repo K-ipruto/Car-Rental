@@ -1,16 +1,46 @@
 car_rental_system/
 ├── app/
 │   ├── __init__.py
-│   ├── models.py
-│   ├── database.json
+│   ├── config.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   ├── car.py
+│   │   ├── booking.py
 │   ├── routes/
 │   │   ├── __init__.py
 │   │   ├── car_routes.py
 │   │   ├── auth_routes.py
-│   ├── config.py
-├── static/
-│   ├── index.html
-│   ├── app.js
+│   │   ├── booking_routes.py
+│   ├── templates/
+│   │   ├── auth/
+│   │   │   ├── login.html
+│   │   │   ├── register.html
+│   │   ├── cars/
+│   │   │   ├── car_list.html
+│   │   │   ├── car_detail.html
+│   │   ├── bookings/
+│   │   │   ├── booking_form.html
+│   │   │   ├── booking_history.html
+│   │   ├── base.html
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── index.css
+│   │   ├── js/
+│   │   │   ├── app.js
+│   │   ├── images/
+│   │       ├── car_1.png
+│   │       ├── car_2.png
+│   │       ├── car_3.png
+│   │       ├── car_4.png
+│   │       ├── car_5.png
+│   │       ├── car_6.png
+│   │       ├── car_7.png
+│   │       ├── car_8.png
+│   │       ├── car_9.png
+│   │       ├── car_10.png
+│   ├── database.json
 ├── run.py
 ├── .gitignore
 ├── requirements.txt
+├── README.md

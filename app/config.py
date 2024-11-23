@@ -3,14 +3,26 @@ from flask import Flask, render_template, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
+from flask_login import LoginManager
+
 
 class Config:
     SQLALCHEMY_DATABASE_URI = "sqlite:///quickcar.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+app = Flask(__name__)
+
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 jwt = JWTManager()
+
+login_manager = LoginManager(app)
+login_manager.login_view = 'auth.login'
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 from app.user import User
 from app.car import Car

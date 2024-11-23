@@ -2,6 +2,7 @@ from flask import Flask, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
+from flask_login import LoginManager
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
@@ -11,16 +12,28 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object('app.config.Config')
     app.config['SECRET_KEY'] = 'your-secret-key'
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///quickcar.db"
 
     db.init_app(app)
+    login_manager = LoginManager(app)
+    login_manager.login_view = 'auth.login'
+
+    from app.user import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+
     bcrypt.init_app(app)
     jwt.init_app(app)
 
-    # from app.auth_routes import auth_bp
+    from app.auth_routes import auth_bp
     from app.car_routes import car_bp
+    from app.booking_routes import booking_bp
     
-    # app.register_blueprint(auth_bp, url_prefix='/api/auth')
+    app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(car_bp, url_prefix='/api')
+    app.register_blueprint(booking_bp)
 
     @app.route('/')
     def serve_index():

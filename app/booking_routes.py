@@ -1,35 +1,29 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from booking import Booking
-from car import Car
-from .. import db
+from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask_login import login_required, current_user
+from app import db
+from app.booking import Booking
+from app.car import Car
 
 booking_bp = Blueprint('booking', __name__, url_prefix='/bookings')
 
 @booking_bp.route('/<int:car_id>', methods=['GET', 'POST'])
+@login_required
 def book_car(car_id):
-    if 'user_id' not in session:
-        flash("Please log in to book a car.")
-        return redirect(url_for('auth.login'))
-    
+    car = Car.query.get_or_404(car_id)
     if request.method == 'POST':
         booking_date = request.form['booking_date']
         return_date = request.form['return_date']
-        user_id = session['user_id']
 
-        new_booking = Booking(user_id=user_id, car_id=car_id, booking_date=booking_date, return_date=return_date)
+        new_booking = Booking(user_id=current_user.id, car_id=car_id, booking_date=booking_date, return_date=return_date)
         db.session.add(new_booking)
         db.session.commit()
         flash("Booking successful!")
         return redirect(url_for('booking.view_bookings'))
 
-    car = Car.query.get_or_404(car_id)
     return render_template('bookings/booking_form.html', car=car)
 
-@booking_bp.route('/')
+@booking_bp.route('/view', methods=['GET'])
+@login_required
 def view_bookings():
-    if 'user_id' not in session:
-        flash("Please log in to view your bookings.")
-        return redirect(url_for('auth.login'))
-    
-    bookings = Booking.query.filter_by(user_id=session['user_id']).all()
+    bookings = Booking.query.filter_by(user_id=current_user.id).all()
     return render_template('bookings/booking_history.html', bookings=bookings)

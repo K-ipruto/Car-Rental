@@ -18,7 +18,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Add event listener to rent button
                     const rentButton = carItem.querySelector('.rent-now');
-                    rentButton.addEventListener('click', () => showRentalForm(car));
+                    rentButton.addEventListener('click', () => {
+                        fetch('/auth/check')
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.authenticated) {
+                                    showRentalForm(car, data.user);
+                                } else {
+                                    alert('Please log in to rent a car.');
+                                    window.location.href = '/auth/login';
+                                }
+                            });
+                    });
 
                     carList.appendChild(carItem);
                 });
@@ -92,4 +103,98 @@ document.getElementById('booking-form').addEventListener('submit', function(e) {
     console.log('Booking Details:', bookingDetails);
     alert('Booking successful!');
     document.getElementById('rental-form').style.display = 'none';
+});
+
+
+
+// Handle Login Form Submission
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    fetch('/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Login successful!');
+            location.reload();
+        } else {
+            alert('Login failed: ' + data.message);
+        }
+    });
+});
+
+// Handle Register Form Submission
+document.getElementById('register-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const full_name = document.getElementById('register-full-name').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+
+    fetch('/auth/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ full_name, email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Registration successful! Please log in.');
+            // Close register modal and open login modal
+            document.getElementById('register-modal').style.display = 'none';
+            document.getElementById('login-modal').style.display = 'block';
+        } else {
+            alert('Registration failed: ' + data.message);
+        }
+    });
+});
+
+// Modal functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const loginModal = document.getElementById('login-modal');
+    const registerModal = document.getElementById('register-modal');
+    const modalOverlay = document.getElementById('modal-overlay');
+
+    const openLoginBtn = document.getElementById('open-login-modal');
+    const openRegisterBtn = document.getElementById('open-register-modal');
+
+    // Open Login Modal
+    openLoginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginModal.style.display = 'block';
+        modalOverlay.style.display = 'block';
+    });
+
+    // Open Register Modal
+    openRegisterBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        registerModal.style.display = 'block';
+        modalOverlay.style.display = 'block';
+    });
+
+    // Close Modals
+    const closeButtons = document.querySelectorAll('.close');
+    closeButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const modalId = btn.getAttribute('data-modal');
+            document.getElementById(modalId).style.display = 'none';
+            modalOverlay.style.display = 'none';
+        });
+    });
+
+    // Close Modals by clicking on overlay
+    modalOverlay.addEventListener('click', () => {
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'none';
+        modalOverlay.style.display = 'none';
+    });
 });
