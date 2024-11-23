@@ -1,75 +1,94 @@
 {
-    "cars": [
-      {
-        "id": 1,
-        "make": "Toyota",
-        "model": "Corolla",
-        "year": 2020,
-        "availability": true
-      },
-      {
-        "id": 2,
-        "make": "Honda",
-        "model": "Civic",
-        "year": 2019,
-        "availability": true
-      },
-      {
-        "id": 3,
-        "make": "Ford",
-        "model": "Focus",
-        "year": 2021,
-        "availability": false
-      },
-      {
-        "id": 4,
-        "make": "Chevrolet",
-        "model": "Malibu",
-        "year": 2018,
-        "availability": true
-      },
-      {
-        "id": 5,
-        "make": "Tesla",
-        "model": "Model 3",
-        "year": 2022,
-        "availability": false
-      },
-      {
-        "id": 6,
-        "make": "BMW",
-        "model": "3 Series",
-        "year": 2021,
-        "availability": true
-      },
-      {
-        "id": 7,
-        "make": "Mercedes-Benz",
-        "model": "C-Class",
-        "year": 2020,
-        "availability": false
-      },
-      {
-        "id": 8,
-        "make": "Hyundai",
-        "model": "Elantra",
-        "year": 2019,
-        "availability": true
-      },
-      {
-        "id": 9,
-        "make": "Nissan",
-        "model": "Altima",
-        "year": 2021,
-        "availability": true
-      },
-      {
-        "id": 10,
-        "make": "Volkswagen",
-        "model": "Passat",
-        "year": 2017,
-        "availability": false
-      }
-    ]
-  }
-  
+  "cars": [
+    {
+      "id": 1,
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2020,
+      "availability": true,
+      "description": "A reliable sedan with excellent fuel efficiency and advanced safety features.",
+      "image": "https://example.com/images/toyota-corolla-2020.jpg"
+    },
+    {
+      "id": 2,
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2019,
+      "availability": true,
+      "description": "A compact car known for its smooth ride and modern technology.",
+      "image": "https://example.com/images/honda-civic-2019.jpg"
+    },
+    {
+      "id": 3,
+      "make": "Ford",
+      "model": "Focus",
+      "year": 2021,
+      "availability": false,
+      "description": "A sporty hatchback with great handling and a sleek design.",
+      "image": "https://example.com/images/ford-focus-2021.jpg"
+    },
+    {
+      "id": 4,
+      "make": "Chevrolet",
+      "model": "Malibu",
+      "year": 2018,
+      "availability": true,
+      "description": "A midsize sedan offering a comfortable interior and efficient performance.",
+      "image": "https://example.com/images/chevrolet-malibu-2018.jpg"
+    },
+    {
+      "id": 5,
+      "make": "Tesla",
+      "model": "Model 3",
+      "year": 2022,
+      "availability": false,
+      "description": "A fully electric sedan with cutting-edge technology and impressive range.",
+      "image": "https://example.com/images/tesla-model3-2022.jpg"
+    },
+    {
+      "id": 6,
+      "make": "BMW",
+      "model": "3 Series",
+      "year": 2021,
+      "availability": true,
+      "description": "A luxury sedan offering a powerful engine and premium features.",
+      "image": "https://example.com/images/bmw-3series-2021.jpg"
+    },
+    {
+      "id": 7,
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "year": 2020,
+      "availability": false,
+      "description": "A high-end sedan with sophisticated design and superior comfort.",
+      "image": "https://example.com/images/mercedes-cclass-2020.jpg"
+    },
+    {
+      "id": 8,
+      "make": "Hyundai",
+      "model": "Elantra",
+      "year": 2019,
+      "availability": true,
+      "description": "A budget-friendly car with a stylish exterior and modern amenities.",
+      "image": "https://example.com/images/hyundai-elantra-2019.jpg"
+    },
+    {
+      "id": 9,
+      "make": "Nissan",
+      "model": "Altima",
+      "year": 2021,
+      "availability": true,
+      "description": "A reliable midsize sedan with excellent safety ratings and a smooth ride.",
+      "image": "https://example.com/images/nissan-altima-2021.jpg"
+    },
+    {
+      "id": 10,
+      "make": "Volkswagen",
+      "model": "Passat",
+      "year": 2017,
+      "availability": false,
+      "description": "A spacious sedan with a refined interior and strong performance.",
+      "image": "https://example.com/images/volkswagen-passat-2017.jpg"
+    }
+  ]
+}

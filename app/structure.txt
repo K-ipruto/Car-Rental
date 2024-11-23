@@ -1,0 +1,16 @@
+car_rental_system/
+├── app/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── database.json
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── car_routes.py
+│   │   ├── auth_routes.py
+│   ├── config.py
+├── static/
+│   ├── index.html
+│   ├── app.js
+├── run.py
+├── .gitignore
+├── requirements.txt

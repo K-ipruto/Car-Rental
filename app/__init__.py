@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
@@ -21,5 +21,17 @@ def create_app():
     
     # app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(car_bp, url_prefix='/api')
+
+    @app.route('/')
+    def serve_index():
+        return send_from_directory('static', 'index.html')
+
+    @app.route('/cars')
+    def serve_cars():
+        return send_from_directory('static', 'car.html')
+
+    @app.route('/<path:path>')
+    def serve_static(path):
+        return send_from_directory('static', path)
 
     return app
