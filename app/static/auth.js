@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('Login successful!');
                 window.location.href = '/cars';
             } else {
                 alert('Login failed: ' + data.message);

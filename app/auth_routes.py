@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, url_for
+from flask import Blueprint, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
 from app.user import User
@@ -18,7 +18,7 @@ def login():
     # Verify user exists and password matches
     if user and check_password_hash(user.password, password):
         login_user(user)  # Logs in the user using Flask-Login
-        return jsonify({'success': True, 'message': 'Login successful!', 'redirect': url_for('car_bp.cars')})
+        return jsonify({'success': True, 'message': 'Login successful!'})
     else:
         return jsonify({'success': False, 'message': 'Invalid email or password.'})
 
