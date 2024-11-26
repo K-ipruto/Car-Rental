@@ -10,19 +10,6 @@ This application is a Car Rental System that allows users to browse available 
 - Interactive rental form with date validation
 - Responsive design for all devices
 
-## Tech Stack
-
-- Backend:
-  - Python 3.x
-  - Flask
-  - SQLAlchemy
-  - JWT Authentication
-
-- Frontend:
-  - HTML5
-  - CSS3
-  - JavaScript (Vanilla)
-
 ## Installation
 
 1. Clone the repository:
@@ -32,15 +19,15 @@ This application is a Car Rental System that allows users to browse available 
 ``pip install -r requirements.txt``
 
 3. Run the application:
-``Run the application:``
+``flask run``
 
-## **Tech Stack:**
+## Tech Stack:
 
-    - **Backend:** Flask (Python) with SQLAlchemy for database and ORM management.
-    - **Frontend:** HTML, CSS, JavaScript.
-    - **Database:** SQLite/PostgreSQL (or mention what you use).
-    - **Production Setup:** Gunicorn with WSGI.
-    - **Authentication & Security:** flask-login, flask-Bcrypt
+- **Backend:** Flask (Python) with SQLAlchemy for database and ORM management.
+- **Frontend:** HTML, CSS, JavaScript.
+- **Database:** SQLite/PostgreSQL (or mention what you use).
+- **Production Setup:** Gunicorn with WSGI.
+- **Authentication & Security:** flask-login, flask-Bcrypt
 
 
 ## API Endpoints:
