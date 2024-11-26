@@ -1,8 +1,9 @@
-from app import create_app
+from app import create_app, db
 
-# Initialize the Flask application
 app = create_app()
 
-if __name__ == "__main__":
-    # Run in debug mode for local development
-    app.run(debug=True)
+with app.app_context():
+    db.create_all()  # Creates all tables from models
+
+if __name__ == '__main__':
+    app.run(debug=False)
