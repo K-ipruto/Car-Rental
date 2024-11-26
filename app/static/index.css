@@ -343,7 +343,7 @@ button.btn:hover {
     resize: vertical;
 }
 
-#booking-form {
+#booking-form, #login-form, #signup-form {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -360,6 +360,8 @@ button.btn:hover {
 #booking-form input[type="text"],
 #booking-form input[type="email"],
 #booking-form input[type="tel"],
+#login-form input,
+#signup-form input,
 #booking-form select {
     width: 100%;
     padding: 8px;
@@ -392,6 +394,51 @@ button.btn:hover {
         width: 95%;
         padding: 15px;
     }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    max-width: 500px;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    padding: 20px;
+    position: relative;
+}
+
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.modal .close:hover {
+    color: #333;
 }
 
 /* Footer */

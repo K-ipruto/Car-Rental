@@ -16,9 +16,8 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/cars">Cars</a></li>
-                        <li><a href="#" class="btn" id="open-login-modal">Login</a></li>
-                        <li><button id="open-login-modal" class="btn">Login</button></li>
-                        <li><a href="#" class="btn" id="open-register-modal">Sign Up</a></li>
+                        <li><button id="login-button" class="btn">Login</button></li>
+                        <li><button id="signup-button" class="btn">Sign Up</button></li>
                     </ul>
                 </nav>
             </div>
@@ -53,16 +52,16 @@
                 <label for="duration">Duration (days):</label>
                 <input type="number" id="duration" name="duration" min="1" required>
     
-                <label for="driver">Need Driver:</label>
+                <label for="driver">Click on the checkbox if you need a driver:</label>
                 <input type="checkbox" id="driver" name="driver">
     
                 <!-- User Details Section -->
                 <h3>User Details</h3>
-                <label for="name">Name:</label>
+                <!-- <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required> -->
 
                 <label for="phone">Phone:</label>
                 <input type="tel" id="phone" name="phone" required>
@@ -75,19 +74,36 @@
         </div>
 
             <!-- Login Modal -->
-        <div id="login-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" data-modal="login-modal">&times;</span>
-                <form id="login-form">
-                    <h2>Login</h2>
-                    <label for="login-email">Email:</label>
-                    <input type="email" id="login-email" name="email" required>
-                    <label for="login-password">Password:</label>
-                    <input type="password" id="login-password" name="password" required>
-                    <button type="submit" class="btn">Login</button>
-                </form>
-            </div>
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" data-modal="login-modal">&times;</span>
+            <form id="login-form">
+                <h2>Login</h2>
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
         </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" data-modal="signup-modal">&times;</span>
+            <form id="signup-form">
+                <h2>Sign Up</h2>
+                <label for="signup-full-name">Full Name:</label>
+                <input type="text" id="signup-full-name" name="full_name" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
 
         <!-- Modal Overlay -->
         <div id="modal-overlay" class="modal-overlay"></div>

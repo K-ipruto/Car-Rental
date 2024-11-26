@@ -5,3 +5,4 @@ Flask-JWT-Extended
 python-dotenv
 Werkzeug==2.2.3
 flask_login
+flask-admin

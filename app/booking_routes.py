@@ -1,29 +1,41 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, request, jsonify
 from flask_login import login_required, current_user
 from app import db
-from app.booking import Booking
 from app.car import Car
+from app.booking import Booking
 
-booking_bp = Blueprint('booking', __name__, url_prefix='/bookings')
+booking_bp = Blueprint('booking', __name__)
 
-@booking_bp.route('/<int:car_id>', methods=['GET', 'POST'])
+@booking_bp.route('/book', methods=['POST'])
 @login_required
-def book_car(car_id):
-    car = Car.query.get_or_404(car_id)
-    if request.method == 'POST':
-        booking_date = request.form['booking_date']
-        return_date = request.form['return_date']
+def book_car():
+    data = request.get_json()
+    car_id = data.get('car_id')
+    rental_date = data.get('rental_date')
+    return_date = data.get('return_date')
 
-        new_booking = Booking(user_id=current_user.id, car_id=car_id, booking_date=booking_date, return_date=return_date)
-        db.session.add(new_booking)
-        db.session.commit()
-        flash("Booking successful!")
-        return redirect(url_for('booking.view_bookings'))
+    car = Car.query.get(car_id)
+    if not car:
+        return jsonify({'success': False, 'message': 'Car not found.'})
 
-    return render_template('bookings/booking_form.html', car=car)
+    # Check availability
+    existing_booking = Booking.query.filter(
+        Booking.car_id == car_id,
+        Booking.rental_date <= return_date,
+        Booking.return_date >= rental_date
+    ).first()
 
-@booking_bp.route('/view', methods=['GET'])
-@login_required
-def view_bookings():
-    bookings = Booking.query.filter_by(user_id=current_user.id).all()
-    return render_template('bookings/booking_history.html', bookings=bookings)
+    if existing_booking:
+        return jsonify({'success': False, 'message': 'Car is not available for the selected dates.'})
+
+    # Create new booking
+    new_booking = Booking(
+        user_id=current_user.id,
+        car_id=car_id,
+        rental_date=rental_date,
+        return_date=return_date
+    )
+    db.session.add(new_booking)
+    db.session.commit()
+
+    return jsonify({'success': True, 'message': 'Booking successful!'})
