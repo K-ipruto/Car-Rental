@@ -1,6 +1,6 @@
 # QuickCar Rentals
 
-A web-based car rental system built with Flask and JavaScript that allows users to browse, rent, and manage car rentals.
+This application is a Car Rental System that allows users to browse available cars, create accounts, log in, make bookings, and manage their reservations. The system includes both frontend and backend components, providing a seamless user experience for renting cars online.
 
 ## Features
 
@@ -34,19 +34,13 @@ A web-based car rental system built with Flask and JavaScript that allows users 
 3. Run the application:
 ``Run the application:``
 
-## Project Structure
-app/
-├── __init__.py
-├── models.py
-├── database.json
-├── auth_routes.py
-├── car_routes.py
-├── config.py
-└── static/
-    ├── index.html
-    ├── car.html
-    ├── index.css
-    └── app.js
+## **Tech Stack:**
+
+    - **Backend:** Flask (Python) with SQLAlchemy for database and ORM management.
+    - **Frontend:** HTML, CSS, JavaScript.
+    - **Database:** SQLite/PostgreSQL (or mention what you use).
+    - **Production Setup:** Gunicorn with WSGI.
+    - **Authentication & Security:** flask-login, flask-Bcrypt
 
 
 ## API Endpoints:
