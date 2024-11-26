@@ -7,6 +7,7 @@ from flask_login import LoginManager
 
 
 class Config:
+    SECRET_KEY = '4dm1n!P@ssword'
     SQLALCHEMY_DATABASE_URI = "sqlite:///quickcar.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -41,7 +42,7 @@ def create_app():
 
     from app.auth_routes import auth_bp
     from app.car_routes import car_bp
-    # app.register_blueprint(auth_bp, url_prefix='/api/auth')
+    app.register_blueprint(auth_bp, url_prefix='/auth') 
     app.register_blueprint(car_bp, url_prefix='/api')
 
     @app.route('/')

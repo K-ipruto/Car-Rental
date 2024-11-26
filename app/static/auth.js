@@ -2,23 +2,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get references to the buttons and modals
     const loginButton = document.getElementById('login-button');
     const signupButton = document.getElementById('signup-button');
+    const logoutButton = document.getElementById('logout-button');
     const loginModal = document.getElementById('login-modal');
     const signupModal = document.getElementById('signup-modal');
     const modalOverlay = document.getElementById('modal-overlay');
 
     // Open Login Modal
-    loginButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        loginModal.style.display = 'block';
-        modalOverlay.style.display = 'block';
-    });
+    if (loginButton) {
+        loginButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.style.display = 'block';
+            modalOverlay.style.display = 'block';
+        });
+    }
 
     // Open Sign Up Modal
-    signupButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        signupModal.style.display = 'block';
-        modalOverlay.style.display = 'block';
-    });
+    if (signupButton) {
+        signupButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            signupModal.style.display = 'block';
+            modalOverlay.style.display = 'block';
+        });
+    }
 
     // Close Modals when clicking on the close button
     const closeButtons = document.querySelectorAll('.close');
@@ -37,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         modalOverlay.style.display = 'none';
     });
 
-    // Existing form submission handlers
     // Handle Login Form Submission
     document.getElementById('login-form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -88,4 +92,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Handle Logout
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch('/auth/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Logout successful!');
+                    window.location.href = '/'; // Redirect to home page
+                } else {
+                    alert('Logout failed: ' + data.message);
+                }
+            });
+        });
+    }
 });

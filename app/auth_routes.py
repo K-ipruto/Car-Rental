@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session, flash, jsonify
+from flask import Blueprint, request, jsonify, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
 from app.user import User
 from . import db
+from sqlalchemy.exc import IntegrityError
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -17,13 +18,12 @@ def login():
     # Verify user exists and password matches
     if user and check_password_hash(user.password, password):
         login_user(user)  # Logs in the user using Flask-Login
-        return jsonify({'success': True, 'message': 'Login successful!'})
+        return jsonify({'success': True, 'message': 'Login successful!', 'redirect': url_for('car_bp.cars')})
     else:
         return jsonify({'success': False, 'message': 'Invalid email or password.'})
 
 @auth_bp.route('/register', methods=['POST'])
 def register():
-    print("Register route accessed")
     data = request.get_json()
     full_name = data.get('full_name')
     email = data.get('email')
@@ -38,13 +38,16 @@ def register():
     hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
     new_user = User(full_name=full_name, email=email, password=hashed_password)
     db.session.add(new_user)
-    db.session.commit()
+    try:
+        db.session.commit()
+    except IntegrityError:
+        db.session.rollback()
+        return jsonify({'success': False, 'message': 'An error occurred. Please try again.'})
 
     return jsonify({'success': True, 'message': 'Registration successful! Please log in.'})
 
-@auth_bp.route('/logout')
+@auth_bp.route('/logout', methods=['POST'])
 @login_required
 def logout():
     logout_user()
-    flash('You have been logged out.')
-    return redirect(url_for('main.index'))
+    return jsonify({'success': True, 'message': 'Logout successful!'})

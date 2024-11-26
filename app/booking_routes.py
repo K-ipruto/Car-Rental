@@ -1,10 +1,10 @@
 from flask import Blueprint, request, jsonify
 from flask_login import login_required, current_user
 from app import db
-from app.car import Car
 from app.booking import Booking
+from app.car import Car
 
-booking_bp = Blueprint('booking', __name__)
+booking_bp = Blueprint('booking_bp', __name__, url_prefix='/api/bookings')
 
 @booking_bp.route('/book', methods=['POST'])
 @login_required
@@ -39,3 +39,21 @@ def book_car():
     db.session.commit()
 
     return jsonify({'success': True, 'message': 'Booking successful!'})
+
+@booking_bp.route('/booked_cars', methods=['GET'])
+@login_required
+def get_booked_cars():
+    bookings = Booking.query.filter_by(user_id=current_user.id).all()
+    booked_cars = []
+    for booking in bookings:
+        car = Car.query.get(booking.car_id)
+        booked_cars.append({
+            'car_id': car.id,
+            'brand': car.brand,
+            'make': car.make,
+            'model': car.model,
+            'year': car.year,
+            'rental_date': booking.rental_date,
+            'return_date': booking.return_date
+        })
+    return jsonify(booked_cars)
