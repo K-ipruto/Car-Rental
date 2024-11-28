@@ -11,6 +11,9 @@ class Config:
     SQLALCHEMY_DATABASE_URI = "sqlite:///quickcar.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = "sqlite:///quickcar.db"
+
 app = Flask(__name__)
 
 db = SQLAlchemy()

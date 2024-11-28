@@ -31,10 +31,6 @@ wheels/
 .installed.cfg
 *.egg
 
-# Flask specific
-instance/
-.webassets-cache
-
 # Pytest
 .cache/
 
@@ -52,11 +48,6 @@ instance/
 
 # Logs
 *.log
-
-# Database
-*.sqlite3
-*.db
-# database.json
 
 # Unit test / coverage reports
 htmlcov/
