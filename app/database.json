@@ -1,0 +1,114 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "brand": "Toyota",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2020,
+      "availability": true,
+      "price": 20000,
+      "description": "A reliable sedan with excellent fuel efficiency and advanced safety features.",
+      "image": "/car_1.png"
+    },
+    {
+      "id": 2,
+      "brand": "Honda",
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2019,
+      "availability": true,
+      "price": 19000,
+      "description": "A compact car known for its smooth ride and modern technology.",
+      "image": "/car_2.png"
+    },
+    {
+      "id": 3,
+      "brand": "Ford",
+      "make": "Ford",
+      "model": "Focus",
+      "year": 2021,
+      "availability": false,
+      "price": 22000,
+      "description": "A sporty hatchback with great handling and a sleek design.",
+      "image": "/car_3.png"
+    },
+    {
+      "id": 4,
+      "brand": "Chevrolet",
+      "make": "Chevrolet",
+      "model": "Malibu",
+      "year": 2018,
+      "availability": true,
+      "price": 18000,
+      "description": "A midsize sedan offering a comfortable interior and efficient performance.",
+      "image": "/car_4.png"
+    },
+    {
+      "id": 5,
+      "brand": "Tesla",
+      "make": "Tesla",
+      "model": "Model 3",
+      "year": 2022,
+      "availability": false,
+      "price": 45000,
+      "description": "A fully electric sedan with cutting-edge technology and impressive range.",
+      "image": "/car_5.png"
+    },
+    {
+      "id": 6,
+      "brand": "BMW",
+      "make": "BMW",
+      "model": "3 Series",
+      "year": 2021,
+      "availability": true,
+      "price": 41000,
+      "description": "A luxury sedan offering a powerful engine and premium features.",
+      "image": "/car_6.png"
+    },
+    {
+      "id": 7,
+      "brand": "Mercedes-Benz",
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "year": 2020,
+      "availability": false,
+      "price": 43000,
+      "description": "A high-end sedan with sophisticated design and superior comfort.",
+      "image": "/car_7.png"
+    },
+    {
+      "id": 8,
+      "brand": "Hyundai",
+      "make": "Hyundai",
+      "model": "Elantra",
+      "year": 2019,
+      "availability": true,
+      "price": 17000,
+      "description": "A budget-friendly car with a stylish exterior and modern amenities.",
+      "image": "/car_8.png"
+    },
+    {
+      "id": 9,
+      "brand": "Nissan",
+      "make": "Nissan",
+      "model": "Altima",
+      "year": 2021,
+      "availability": true,
+      "price": 21000,
+      "description": "A reliable midsize sedan with excellent safety ratings and a smooth ride.",
+      "image": "/car_9.png"
+    },
+    {
+      "id": 10,
+      "brand": "Volkswagen",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "year": 2017,
+      "availability": false,
+      "price": 16000,
+      "description": "A spacious sedan with a refined interior and strong performance.",
+      "image": "/car_10.png"
+    }
+  ]
+}

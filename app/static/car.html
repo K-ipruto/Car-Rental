@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Car Rental System</title>
+</head>
+<body>
+
+        <!-- Header Section -->
+        <header>
+            <div class="container">
+                <h1>QuickCar Rentals</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cars">Cars</a></li>
+                        <li><button id="logout-button" class="btn">Logout</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    
+
+    <!-- Cars Section -->
+    <section id="cars">
+        <h2>Available Cars</h2>
+        <div class="container">
+            <div id="car-list" class="car-list">
+            </div>
+        </div>
+    </section>
+
+        <!-- Rental Form Modal -->
+        <div class="modal-overlay"> </div>
+        <div id="rental-form">
+            <button class="close-button">&times;</button>
+            <form id="booking-form">
+                <label for="car">Select Car:</label>
+                <select id="car" name="car" required>
+                    <option value="">Choose a car</option>
+                    <option value="car1">Car 1</option>
+                    <option value="car2">Car 2</option>
+                    <!-- More options -->
+                </select>
+    
+                <label for="rental-date">Rental Date and Time:</label>
+                <input type="datetime-local" id="rental-date" name="rental-date" required>
+    
+                <label for="duration">Duration (days):</label>
+                <input type="number" id="duration" name="duration" min="1" required>
+    
+                <label for="driver">Click on the checkbox if you need a driver:</label>
+                <input type="checkbox" id="driver" name="driver">
+    
+                <!-- User Details Section -->
+                <h3>User Details</h3>
+                <!-- <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required> -->
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+
+            <!-- Login Modal -->
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" data-modal="login-modal">&times;</span>
+            <form id="login-form">
+                <h2>Login</h2>
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" data-modal="signup-modal">&times;</span>
+            <form id="signup-form">
+                <h2>Sign Up</h2>
+                <label for="signup-full-name">Full Name:</label>
+                <input type="text" id="signup-full-name" name="full_name" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+        <!-- Modal Overlay -->
+        <div id="modal-overlay" class="modal-overlay"></div>
+    
+        <script src="app.js"></script>
+        <script src="auth.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 QuickCar Rentals. All rights reserved.</p>
+    </footer>
+</body>
+</html>
